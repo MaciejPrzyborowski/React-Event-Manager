@@ -1,3 +1,5 @@
-export default function NewEventPage() {
+function NewEventPage() {
   return <h1>NewEventPage</h1>;
 }
+
+export default NewEventPage;

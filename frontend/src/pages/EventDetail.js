@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-export default function EventDetailPage() {
+function EventDetailPage() {
   const params = useParams();
   return (
     <>
@@ -9,3 +9,5 @@ export default function EventDetailPage() {
     </>
   );
 }
+
+export default EventDetailPage;

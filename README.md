@@ -1,5 +1,5 @@
-# RouteEvents
-Repozytorium zawiera aplikację **RouteEvents**, której frontend został zrealizowany w React, natomiast backend zrealizowano z wykorzystaniem Express.js i Node.js.\
+# RouterEvents
+Repozytorium zawiera aplikację **RouterEvents**, której frontend został zrealizowany w React, natomiast backend zrealizowano z wykorzystaniem Express.js i Node.js.\
 Aplikacja umożliwia wyświetlanie, dodawanie, edytowanie i usuwanie wydarzeń, które są zapisywane na backendzie.\
 Jest przykładem wykorzystania **React Router** do zarządzania trasami w aplikacji, z naciskiem na dynamiczne ładowanie danych i obsługę błędów.
 

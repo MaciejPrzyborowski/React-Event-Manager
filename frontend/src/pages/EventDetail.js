@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import {
   Await,
   defer,
@@ -7,7 +8,6 @@ import {
 } from "react-router-dom";
 import EventItem from "../components/EventItem";
 import EventsList from "../components/EventsList";
-import { Suspense } from "react";
 
 function EventDetailPage() {
   const { event, events } = useRouteLoaderData("event-detail");
@@ -64,8 +64,8 @@ export async function eventDetailLoader({ request, params }) {
 }
 
 export async function deleteEventAction({ params, request }) {
-  const id = params.eventId;
-  const response = await fetch("http://localhost:8080/events/" + id, {
+  const eventId = params.eventId;
+  const response = await fetch("http://localhost:8080/events/" + eventId, {
     method: request.method,
   });
 

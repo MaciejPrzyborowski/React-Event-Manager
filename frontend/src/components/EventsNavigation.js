@@ -23,7 +23,6 @@ function EventsNavigation() {
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
-              end
             >
               New Event
             </NavLink>

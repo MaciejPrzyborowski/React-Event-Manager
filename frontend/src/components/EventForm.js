@@ -36,7 +36,7 @@ function EventForm({ method, event }) {
           type="text"
           name="title"
           required
-          defaultValue={event && event.title}
+          defaultValue={event ? event.title : ""}
         />
       </p>
       <p>
@@ -46,7 +46,7 @@ function EventForm({ method, event }) {
           type="url"
           name="image"
           required
-          defaultValue={event && event.image}
+          defaultValue={event ? event.image : ""}
         />
       </p>
       <p>
@@ -56,7 +56,7 @@ function EventForm({ method, event }) {
           type="date"
           name="date"
           required
-          defaultValue={event && event.date}
+          defaultValue={event ? event.date : ""}
         />
       </p>
       <p>
@@ -66,15 +66,15 @@ function EventForm({ method, event }) {
           name="description"
           rows="5"
           required
-          defaultValue={event && event.description}
+          defaultValue={event ? event.description : ""}
         />
       </p>
       <div className={classes.actions}>
-        <button type="button" onClick={cancelHandler}>
+        <button type="button" onClick={cancelHandler} disabled={isSubmitting}>
           Cancel
         </button>
         <button disabled={isSubmitting}>
-          {isSubmitting ? "Submitting" : "Save"}
+          {isSubmitting ? "Submitting..." : "Save"}
         </button>
       </div>
     </Form>

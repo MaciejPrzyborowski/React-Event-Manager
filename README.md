@@ -14,6 +14,7 @@ Projekt stanowi przykład zastosowania **React Router** do zarządzania trasami 
  - 🔑 **Rejestracja i logowanie:** Tworzenie konta oraz logowanie, z przechowywaniem `tokenu` autoryzacyjnego i czasu jego wygaśnięcia `expiration`.
  - 🔒 **Autoryzacja:** Dostęp do wybranych operacji i ścieżek jest możliwy dopiero po uzyskaniu autoryzacji użytkownika.
  - 📝 **Operacje na wydarzeniach:** Dodawanie, edytowanie i usuwanie wydarzeń oraz zapisywanie zmian na backendzie.
+ - ⚡ **Optymalizacja:** Wdrożenie `lazy load` dla komponentów oraz mechanizmów ładowania danych i akcji.
 
 ## 🛠️ Technologie
 [![Technologie](https://skillicons.dev/icons?i=react,vite,css,express,nodejs)](https://skillicons.dev)

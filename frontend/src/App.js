@@ -1,23 +1,55 @@
+import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./pages/Root";
 import HomePage from "./pages/Home";
-import EventsPage, { eventsLoader } from "./pages/Events";
-import NewEventPage from "./pages/NewEvent";
-import EventDetailPage, {
-  deleteEventAction,
-  eventDetailLoader,
-} from "./pages/EventDetail";
-import EditEventPage from "./pages/EditEvent";
-import EventsRootLayout from "./pages/EventsRoot";
-import ErrorPage from "./pages/Error";
-import { manipulateEventAction } from "./components/EventForm";
-import NewsletterPage, { newsletterAction } from "./pages/Newsletter";
-import AuthenticationPage, {
-  authenticationAction,
-} from "./pages/Authentication";
-import { logoutAction } from "./pages/Logout";
-import { checkAuthLoader, tokenLoader } from "./util/auth";
+import LazyLoad from "./components/LazyLoad";
+
+// Lazy load for pages
+const ErrorPage = lazy(() => import("./pages/Error"));
+const EventsPage = lazy(() => import("./pages/Events"));
+const NewEventPage = lazy(() => import("./pages/NewEvent"));
+const EventDetailPage = lazy(() => import("./pages/EventDetail"));
+const EditEventPage = lazy(() => import("./pages/EditEvent"));
+const EventsRootLayout = lazy(() => import("./pages/EventsRoot"));
+const NewsletterPage = lazy(() => import("./pages/Newsletter"));
+const AuthenticationPage = lazy(() => import("./pages/Authentication"));
+
+// Lazy load for loaders
+const checkAuthLoader = () =>
+  import("./util/auth").then((module) => module.checkAuthLoader());
+
+const eventsLoader = () =>
+  import("./pages/Events").then((module) => module.eventsLoader());
+
+const eventDetailLoader = (meta) =>
+  import("./pages/EventDetail").then((module) =>
+    module.eventDetailLoader(meta)
+  );
+
+const tokenLoader = () =>
+  import("./util/auth").then((module) => module.tokenLoader());
+
+// Lazy load for actions
+const authenticationAction = (meta) =>
+  import("./pages/Authentication").then((module) =>
+    module.authenticationAction(meta)
+  );
+const deleteEventAction = (meta) =>
+  import("./pages/EventDetail").then((module) =>
+    module.deleteEventAction(meta)
+  );
+
+const logoutAction = () =>
+  import("./pages/Logout").then((module) => module.logoutAction());
+
+const manipulateEventAction = (meta) =>
+  import("./components/EventForm").then((module) =>
+    module.manipulateEventAction(meta)
+  );
+
+const newsletterAction = (meta) =>
+  import("./pages/Newsletter").then((module) => module.newsletterAction(meta));
 
 const router = createBrowserRouter([
   {
@@ -30,11 +62,19 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "events",
-        element: <EventsRootLayout />,
+        element: (
+          <LazyLoad>
+            <EventsRootLayout />
+          </LazyLoad>
+        ),
         children: [
           {
             index: true,
-            element: <EventsPage />,
+            element: (
+              <LazyLoad>
+                <EventsPage />
+              </LazyLoad>
+            ),
             loader: eventsLoader,
           },
           {
@@ -44,12 +84,20 @@ const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                element: <EventDetailPage />,
+                element: (
+                  <LazyLoad>
+                    <EventDetailPage />
+                  </LazyLoad>
+                ),
                 action: deleteEventAction,
               },
               {
                 path: "edit",
-                element: <EditEventPage />,
+                element: (
+                  <LazyLoad>
+                    <EditEventPage />
+                  </LazyLoad>
+                ),
                 action: manipulateEventAction,
                 loader: checkAuthLoader,
               },
@@ -57,7 +105,11 @@ const router = createBrowserRouter([
           },
           {
             path: "new",
-            element: <NewEventPage />,
+            element: (
+              <LazyLoad>
+                <NewEventPage />
+              </LazyLoad>
+            ),
             action: manipulateEventAction,
             loader: checkAuthLoader,
           },
@@ -65,12 +117,20 @@ const router = createBrowserRouter([
       },
       {
         path: "auth",
-        element: <AuthenticationPage />,
+        element: (
+          <LazyLoad>
+            <AuthenticationPage />
+          </LazyLoad>
+        ),
         action: authenticationAction,
       },
       {
         path: "newsletter",
-        element: <NewsletterPage />,
+        element: (
+          <LazyLoad>
+            <NewsletterPage />
+          </LazyLoad>
+        ),
         action: newsletterAction,
       },
       {

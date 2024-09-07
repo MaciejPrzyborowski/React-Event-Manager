@@ -1,8 +1,7 @@
-# RouterEvents
-Repozytorium zawiera aplikację **RouterEvents**, której frontend został zrealizowany w React, natomiast backend zrealizowano z wykorzystaniem Express.js i Node.js.\
-Aplikacja umożliwia wyświetlanie, dodawanie, edytowanie i usuwanie wydarzeń, które są zapisywane na backendzie.\
-Jest przykładem wykorzystania **React Router** do zarządzania trasami w aplikacji, z naciskiem na dynamiczne ładowanie danych i obsługę błędów.
-
+# Event-Manager
+Repozytorium zawiera aplikację **Event-Manager**, której frontend został zrealizowany w React, natomiast backend zrealizowano z wykorzystaniem Express.js i Node.js.\
+Aplikacja umożliwia wyświetlanie, dodawanie, edytowanie i usuwanie wydarzeń oraz rejestrację i logowanie, z pełnym zapisem danych na backendzie. Funkcje zarządzania wydarzeniami są dostępne wyłącznie dla zalogowanych użytkowników, co zapewnia kontrolę dostępu i bezpieczeństwo operacji.\
+Projekt stanowi przykład zastosowania **React Router** do zarządzania trasami w aplikacji, z naciskiem na dynamiczne ładowanie danych, obsługę błędów oraz autoryzację użytkowników za pomocą tokenów z ustawionym czasem wygaśnięcia.
 
 ## 🚀 Cechy
  - 🛤️ **Konfiguracja tras:** Definiowanie tras dla różnych ścieżek, w tym zagnieżdżonych.
@@ -12,14 +11,17 @@ Jest przykładem wykorzystania **React Router** do zarządzania trasami w aplika
  - 🔄 **Pobieranie i przekazywanie danych:** Używanie mechanizmów do ładowania danych (`loader`) i obsługi formularzy (`action`).
  - 🚀 **Pobieranie danych w tle:** Pobieranie danych bez przeładowania strony za pomocą `useFetcher`.
  - ⏳ **Wyświetlanie treści przed pełnym załadowaniem:** Wyświetlanie strony bez oczekiwania na pełne załadowanie danych, dzięki funkcji `defer`.
+ - 🔑 Rejestracja i logowanie: Tworzenie konta oraz logowanie, z przechowywaniem tokenu autoryzacyjnego i czasu jego wygaśnięcia (expiration).
+ - 🔒 Autoryzacja: Dostęp do wybranych operacji i ścieżek jest możliwy dopiero po uzyskaniu autoryzacji użytkownika.
  - 📝 **Operacje na wydarzeniach:** Dodawanie, edytowanie i usuwanie wydarzeń oraz zapisywanie zmian na backendzie.
 
 ## 🛠️ Technologie
 [![Technologie](https://skillicons.dev/icons?i=react,vite,css,express,nodejs)](https://skillicons.dev)
 
 ## 📸 Zdjęcia
-![screenshot1](https://github.com/user-attachments/assets/3213e818-2e02-4c87-8e04-f59e37703216)
-![screenshot2](https://github.com/user-attachments/assets/d27c3313-5608-4d5e-840b-7e3ce778665b)
-![screenshot3](https://github.com/user-attachments/assets/07e21ed9-3e4a-4d3b-885e-39b5a842de43)
+![screenshot1](https://github.com/user-attachments/assets/bedc19d4-50da-463c-82ba-fd1624991e9b)
+![screenshot2](https://github.com/user-attachments/assets/98c2105d-6a86-4639-9197-15429f4b21e9)
+![screenshot3](https://github.com/user-attachments/assets/83a01cdd-518c-4447-9a9a-12603c0d2fa8)
+![screenshot4](https://github.com/user-attachments/assets/0d6986d3-b3f4-4cbf-a8e9-3bac88e1d89e)
 
 💡 React - The Complete Guide 2024

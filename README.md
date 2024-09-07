@@ -11,8 +11,8 @@ Projekt stanowi przykład zastosowania **React Router** do zarządzania trasami 
  - 🔄 **Pobieranie i przekazywanie danych:** Używanie mechanizmów do ładowania danych (`loader`) i obsługi formularzy (`action`).
  - 🚀 **Pobieranie danych w tle:** Pobieranie danych bez przeładowania strony za pomocą `useFetcher`.
  - ⏳ **Wyświetlanie treści przed pełnym załadowaniem:** Wyświetlanie strony bez oczekiwania na pełne załadowanie danych, dzięki funkcji `defer`.
- - 🔑 Rejestracja i logowanie: Tworzenie konta oraz logowanie, z przechowywaniem tokenu autoryzacyjnego i czasu jego wygaśnięcia (expiration).
- - 🔒 Autoryzacja: Dostęp do wybranych operacji i ścieżek jest możliwy dopiero po uzyskaniu autoryzacji użytkownika.
+ - 🔑 **Rejestracja i logowanie:** Tworzenie konta oraz logowanie, z przechowywaniem `tokenu` autoryzacyjnego i czasu jego wygaśnięcia `expiration`.
+ - 🔒 **Autoryzacja:** Dostęp do wybranych operacji i ścieżek jest możliwy dopiero po uzyskaniu autoryzacji użytkownika.
  - 📝 **Operacje na wydarzeniach:** Dodawanie, edytowanie i usuwanie wydarzeń oraz zapisywanie zmian na backendzie.
 
 ## 🛠️ Technologie
